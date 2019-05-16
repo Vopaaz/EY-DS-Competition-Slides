@@ -97,7 +97,7 @@
 					</textarea>
 				</section>
 
-				<section data-markdown data-background-color="#2c3e50">
+				<!-- <section data-markdown data-background-color="#2c3e50">
 					<textarea data-template>
 							- The difference between 3 p.m. and the starting / ending time point of the unknown path. (in seconds)
 							- The difference between the starting and ending time point of the unknown path. (in seconds)
@@ -117,43 +117,444 @@
 							- The coordinate of the start point of the unknown path.
 					</textarea>
 				</section>
+ -->
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+					#### Feature Extraction - Four Aspects
+					<small>
+						<table><tr><th>Aspect</th><th>Specification</th><th>Reason</th></tr><tr><td rowspan="3">Distance</td><td>Distance to the central area</td><td>Intuitive</td></tr><tr><td>Difference between the first seen and the last seen against their distance to the central area</td><td>Indicate the overall moving direction</td></tr><tr><td>Distance between the last two points against their distance to the central area</td><td>Indicate the last moving direction</td></tr><tr><td rowspan="2">Path</td><td>Length of the paths</td><td rowspan="2"><br>Indicating mobility, helpful for predicting&nbsp;&nbsp;the length of the unknown path</td></tr><tr><td>(Estimated) velocity of the paths</td></tr><tr><td>Coordinate</td><td>Coordinate of the last seen point</td><td>Intuitive</td></tr><tr><td rowspan="2">Time</td><td>The entry &amp; exit time of the unknown path</td><td>Just trial</td></tr><tr><td>The duration of the unknown path</td><td>Helpful for predicting the length of the unknown path</td></tr><tr><td></td><td></td><td></td></tr></table>
+
+					</small>
+				</textarea>
+				</section>
 
 			</section>
 
 
 			<section>
-					<section data-markdown data-background-color="#2c3e50">
-							<textarea data-template>
-								### `Null` Value Handling
-							</textarea>
-						</section>
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+						### `Null` Value Handling
+
+						Object: Make full use of the feature data.
+
+						|   | A | B | C |
+						|---|---|---|---|
+						| 0 | v | v | v |
+						| 1 | v | v | v |
+						| 2 | v | v | <font color="#BDA98B"> N </font> |
+						| 3 | v | v | <font color="#BDA98B"> N </font> |
+						| 4 | v | <font color="#BDA98B"> N </font> | <font color="#BDA98B"> N </font> |
+						| 5 | v | <font color="#BDA98B"> N </font> | <font color="#BDA98B"> N </font> |
+
+					</textarea>
+				</section>
+
+
+				<section data-background-color="#2c3e50" data-transition="fade">
+
+					<h4>"separate_all" strategy</h4>
+
+					<table>
+						<tr>
+							<th></th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>v</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>v</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+					</table>
+
+				</section>
+
+
+				<section data-background-color="#2c3e50" data-transition="fade">
+
+					<h4>"separate_all" strategy</h4>
+
+					<table>
+						<tr>
+							<th></th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+					</table>
+
+				</section>
+
+				<section data-background-color="#2c3e50" data-transition="fade">
+
+					<h4>"separate_all" strategy</h4>
+
+					<table>
+						<tr>
+							<th></th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>v</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>v</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+					</table>
+
+				</section>
+
+
+
+				<section data-background-color="#2c3e50" data-transition="fade">
+
+					<h4>"separate_part" strategy</h4>
+
+					<table>
+						<tr>
+							<th></th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>v</td>
+							<td>v</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>v</td>
+							<td>v</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>v</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>v</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+					</table>
+				</section>
+
+
+				<section data-background-color="#2c3e50" data-transition="fade">
+
+					<h4>"separate_part" strategy</h4>
+
+					<table>
+						<tr>
+							<th></th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>v</td>
+							<td>v</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>v</td>
+							<td>v</td>
+							<td>v</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+					</table>
+
+				</section>
+
+
+
+				<section data-background-color="#2c3e50" data-transition="fade">
+
+					<h4>"separate_part" strategy</h4>
+
+					<table>
+						<tr>
+							<th></th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+							<td>
+								<font color="#BDA178"> v </font>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>v</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>v</td>
+							<td>v</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>v</td>
+							<td>N</td>
+							<td>N</td>
+						</tr>
+					</table>
+
+				</section>
+
+
 			</section>
 
-
 			<section>
-					<section data-markdown data-background-color="#2c3e50">
-							<textarea data-template>
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
 								### Algorithm Design
 							</textarea>
-						</section>
+				</section>
 			</section>
 
 
 			<section>
-					<section data-markdown data-background-color="#2c3e50">
-							<textarea data-template>
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
 								## Further Improvement
 							</textarea>
-						</section>
+				</section>
 			</section>
 
 
 			<section>
-					<section data-markdown data-background-color="#2c3e50">
-							<textarea data-template>
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
 								## Applications
 							</textarea>
-						</section>
+				</section>
 			</section>
 
 		</div>
