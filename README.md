@@ -11,7 +11,3 @@ git clone https://github.com/Vopaaz/EY-DS-Competition-Slides.git
 ```
 
 Then double click `index.html`.
-
-## Solution Source
-
-Our solution can be found at [here](https://github.com/Vopaaz/EY-DS-Competition).
