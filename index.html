@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+	<title>EY NextWave Solution by Vopaaz and Xiaochr</title>
 
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/reveal.css">
@@ -53,7 +53,7 @@
 
 							An overall look into the data:
 
-							<img src="assets/map.jpg" width="65%"></img>
+							<img src="assets/map.jpg" width="65%" />
 				</textarea>
 				</section>
 
@@ -535,26 +535,133 @@
 				<section data-markdown data-background-color="#2c3e50">
 					<textarea data-template>
 								### Algorithm Design
+
+								##### Preprocessing
+
+								- Using `Isolation Forest` to eliminate 5% of the outliers.
+								- Standardize the data to have a standard normal distribution.
 							</textarea>
 				</section>
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+									##### Model Training and Selection
+
+									- Support Vector Machine
+									- Random Forest
+									- Gradient Boosting
+									- XGBoosting
+
+									Using grid search and 5-fold cross validation to find the best hyper-parameter.
+					</textarea>
+				</section>
+
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+							The final selected model: `XGBoosting`
+
+							Hyper-parameters:
+
+							- gamma: 0.01
+							- learning_rate: 0.1
+							- max_depth: 7
+							- n_estimators: 100
+							- others: default
+
+						</textarea>
+				</section>
+
 			</section>
+
+			<section>
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+						## Findings
+
+						#### Feature Importance
+
+						<small>
+
+						| Feature              | Importance |
+						|----------------------|------------|
+						| min_distance         | 0.43959369 |
+						| y_last_point         | 0.19094758 |
+						| start_end_dist_diff  | 0.12427313 |
+						| last_path_time_delta | 0.09984531 |
+						| avg_distance         | 0.07993412 |
+						| x_last_point         | 0.04525171 |
+						| max_distance         | 0.01200235 |
+						| last_path_time_entry | 0.00548302 |
+						| last_path_time_exit  | 0.0026691  |
+
+						</small>
+
+				</textarea>
+				</section>
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+					#### How do their appearance looks like?
+
+					<img src="assets/map.jpg" width="65%" />
+
+				</textarea>
+				</section>
+
+			</section>
+
 
 
 			<section>
 				<section data-markdown data-background-color="#2c3e50">
 					<textarea data-template>
-								## Further Improvement
-							</textarea>
+							## Applications
+
+							> Help city authorities anticipate disruptions, make real-time decisions, design new services, and reshape infrastructures in order that cities as <span style="display: inline-block;" class="fragment highlight-blue"> **smart**</span>  as their citizens.
+
+				</textarea>
 				</section>
-			</section>
 
-
-			<section>
 				<section data-markdown data-background-color="#2c3e50">
 					<textarea data-template>
-								## Applications
-							</textarea>
+						### Modularization
+
+						<p class="fragment fade-out">Jupyter Notebook?</p>
+						<p class="fragment fade-up">Python Project!</p>
+						<span class="fragment fade-up">  <img src="assets/tree.png" width="30%" /></span>
+
+					</textarea>
 				</section>
+
+			</section>
+
+			<section>
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+						## Further Improvement
+
+						#### Our Deep Learning Approach
+
+						<img src="assets/map.jpg" width="65%" />
+
+						Outsourcing the street geographical information.
+					</textarea>
+				</section>
+
+				<section data-markdown data-background-color="#2c3e50">
+					<textarea data-template>
+						#### Improve Modularization
+
+						- Enhance wrapping
+						- Provide user-friendly API
+						- Provide GUI interface for decision maker
+
+					</textarea>
+				</section>
+
 			</section>
 
 		</div>
